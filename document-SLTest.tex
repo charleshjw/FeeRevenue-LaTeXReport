@@ -1,0 +1,28 @@
+\documentclass{article}
+\newcommand\version{Output-Q22016-SLTestShort}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{SL}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{SL, DCorporate, DEquity, Government, IEquity,
+IFI, Other}
+
+\section{\BU-Segmentation 1}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{article}
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \def\BU{BDS}
+% \def\SegmentOne{1}
+% \newcommand\SegmentsOneComponent{BDS, BDS_adjusted, Clearance,
+% DomesticClearance, InternationalClearance, GlobalClearance,
+% CDInterchangeService, DomesticCollateral, GlobalTriParty, Other, PremiumService,
+% GlobalLiquidityService, BrokerDayLoan, NonCoreFees, DaylightOverdraft,
+% CommittedCreditFacility}
+% 
+% \section{\BU-Segmentation 1}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummaryByModel.tex}
+% \CleanUp
+
+\def\BU{BDS}
+\def\SegmentTwo{2}
+\newcommand\SegmentsTwoComponent{BDS, BDS_adjusted, Clearance, DomesticClearance, InternationalClearance, 
+GlobalClearance, CDInterchangeService, DomesticCollateral, GlobalTriParty,
+Other, PremiumService, GlobalLiquidityService, BrokerDayLoan, NonCoreFees,
+DaylightOverdraft, CommittedCreditFacility}
+
+\section{\BU-Segmentation 2}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\end{document}

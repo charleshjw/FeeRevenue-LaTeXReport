@@ -1,0 +1,139 @@
+\ifdefined\SegmentOne
+\subsection{Segmentation 1}
+
+\foreach \i in \SegmentsOneComponent
+{%
+	\edef\FileNameResult{\OutputSeasonal{1}//\i/SeasonalDecompositionTestResults.png}%
+    \IfFileExists{\FileNameResult}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i}
+			\begin{figure}[H]
+			\centering
+			\caption{Statistical Tests to Detect Seasonality for \textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameResult}
+			\end{figure}
+	}
+	
+    \foreach \time in \SeasonTime {
+	    \edef\FileNamePlot{\OutputSeasonal{1}//\i/SeasonalDecompositionModel1PlotTime\time.png}%
+	    \edef\FileNameBacktest{\OutputSeasonal{1}//\i/SeasonalDecompositionModel1BackTestTime\time.png}%
+	    \edef\FileNameTable{\OutputSeasonal{1}//\i/SeasonalDecompositionModel1TableTime\time.png}%
+
+    	\IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i - STL Decomposition Model - Time Window \time}
+			\begin{figure}[H]
+			\centering
+			\caption{STL Seasonal Decomposition Models for \textbf{$\i$} with certain
+			historical window}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameBacktest}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+    	}
+    }
+    \newpage
+    
+	\foreach \time in \SeasonTime {
+        \edef\FileNamePlot{\OutputSeasonal{1}//\i/SeasonalDecompositionModel2PlotTime\time.png}%
+	    \edef\FileNameBacktest{\OutputSeasonal{1}//\i/SeasonalDecompositionModel2BackTestTime\time.png}%
+	    \edef\FileNameTable{\OutputSeasonal{1}//\i/SeasonalDecompositionModel2TableTime\time.png}%
+
+    	\IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i - ETS Decomposition Model - Time Window \time}
+			\begin{figure}[H]
+			\centering
+			\caption{ETS Seasonal Decomposition Models for \textbf{$\i$} with certain
+			historical window}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameBacktest}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+    	}
+    }
+	\newpage
+}
+\fi
+
+\ifdefined\SegmentTwo
+\subsection{Segmentation 2}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+    \foreach \time in \SeasonTime {
+	    \edef\FileNamePlot{\OutputSeasonal{2}//\i/SeasonalDecompositionModel1PlotTime\time.png}%
+	    \edef\FileNameBacktest{\OutputSeasonal{2}//\i/SeasonalDecompositionModel1BackTestTime\time.png}%
+	    \edef\FileNameTable{\OutputSeasonal{2}//\i/SeasonalDecompositionModel1TableTime\time.png}%
+
+    	\IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i - STL Decomposition Model for - Time Window \time}
+			\begin{figure}[H]
+			\centering
+			\caption{STL Seasonal Decomposition Models for \textbf{$\i$} with certain
+			historical window}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameBacktest}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+    	}    	
+    }
+    
+    \foreach \time in \SeasonTime {
+        \edef\FileNamePlot{\OutputSeasonal{2}//\i/SeasonalDecompositionModel2PlotTime\time.png}%
+	    \edef\FileNameBacktest{\OutputSeasonal{2}//\i/SeasonalDecompositionModel2BackTestTime\time.png}%
+	    \edef\FileNameTable{\OutputSeasonal{2}//\i/SeasonalDecompositionModel2TableTime\time.png}%
+
+    	\IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i - ETS Decomposition Model - Time Window \time}
+			\begin{figure}[H]
+			\centering
+			\caption{ETS Seasonal Decomposition Models for \textbf{$\i$} with certain
+			historical window}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameBacktest}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+    	}
+    }
+}
+\fi
+
+\ifdefined\SegmentThree 
+\foreach \i in \SegmentsThreeComponent
+{%
+    \foreach \time in \SeasonTime {
+	    \edef\FileNamePlot{\OutputSeasonal{3}//\i/SeasonalDecompositionModel1PlotTime\time.png}%
+	    \edef\FileNameBacktest{\OutputSeasonal{3}//\i/SeasonalDecompositionModel1BackTestTime\time.png}%
+	    \edef\FileNameTable{\OutputSeasonal{3}//\i/SeasonalDecompositionModel1TableTime\time.png}%
+
+    	\IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i - STL Decomposition Model for - Time Window \time}
+			\begin{figure}[H]
+			\centering
+			\caption{STL Seasonal Decomposition Models for \textbf{$\i$} with certain
+			historical window}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameBacktest}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+    	}
+    }
+    
+	\foreach \time in \SeasonTime {	
+    	\edef\FileNamePlot{\OutputSeasonal{3}//\i/SeasonalDecompositionModel2PlotTime\time.png}%
+	    \edef\FileNameBacktest{\OutputSeasonal{3}//\i/SeasonalDecompositionModel2BackTestTime\time.png}%
+	    \edef\FileNameTable{\OutputSeasonal{3}//\i/SeasonalDecompositionModel2TableTime\time.png}%
+
+    	\IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i - ETS Decomposition Model - Time Window \time}
+			\begin{figure}[H]
+			\centering
+			\caption{ETS Seasonal Decomposition Models for \textbf{$\i$} with certain
+			historical window}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameBacktest}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+    	}
+    }
+}
+\fi
+

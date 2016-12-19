@@ -1,0 +1,154 @@
+
+
+\ifdefined\SegmentOne
+\subsection{Segmentation 1}
+
+\foreach \i in \SegmentsOneComponent
+{%
+    \edef\FileNameMetric{\OutputHistory{1}/history-\BU-Metric-\i.png}
+
+    \IfFileExists{\FileNameMetric}{%  spurious spaces that may get inserted
+		\subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Trend for Metric-\textbf{$\i$}}
+		\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetric}\\
+		\end{figure}
+	}
+
+    \edef\FileNameMetricTable{\OutputHistory{1}/history-\BU-Metric-\i-Table.png}
+
+    \IfFileExists{\FileNameMetricTable}{%  spurious spaces that may get inserted
+% 		\subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Statistics for Metric-\textbf{$\i$}}
+		\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetricTable}\\
+		\end{figure}
+	}
+
+    \edef\FileNameRevenue{\OutputHistory{1}/history-\BU-Revenue-\i.png}
+
+    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+    	\subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Trend for Revenue-\textbf{$\i$}}
+        \includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}\\
+		\end{figure}
+	}
+
+	\edef\FileNameRevenueTable{\OutputHistory{1}/history-\BU-Revenue-\i-Table.png}
+
+	\IfFileExists{\FileNameRevenueTable}{%  spurious spaces that may get inserted
+% 		\subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Statistics for Revenue-\textbf{$\i$}}
+		\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenueTable}\\
+		\end{figure}
+	}
+	\newpage
+}
+\fi
+
+\ifdefined\SegmentTwo
+\subsection{Segmentation 2}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+    \edef\FileNameMetric{\OutputHistory{2}/history-\BU-Metric-\i.png}
+
+    \IfFileExists{\FileNameMetric}{%  spurious spaces that may get inserted
+		\subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Trend for Metric-\textbf{$\i$}}
+		\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetric}\\
+		\end{figure}
+	}
+
+    \edef\FileNameMetricTable{\OutputHistory{2}/history-\BU-Metric-\i-Table.png}
+
+    \IfFileExists{\FileNameMetricTable}{%  spurious spaces that may get inserted
+% 		\subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Statistics for Metric-\textbf{$\i$}}
+		\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetricTable}\\
+		\end{figure}
+	}
+
+    \edef\FileNameRevenue{\OutputHistory{2}/history-\BU-Revenue-\i.png}
+
+    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+    	\subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Trend for Revenue-\textbf{$\i$}}
+        \includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}\\
+		\end{figure}
+	}
+
+	\edef\FileNameRevenueTable{\OutputHistory{2}/history-\BU-Revenue-\i-Table.png}
+
+	\IfFileExists{\FileNameRevenueTable}{%  spurious spaces that may get inserted
+% 		\subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Historical Statistics for Revenue-\textbf{$\i$}}
+		\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenueTable}\\
+		\end{figure}
+	}
+	\newpage
+}
+\fi
+
+\ifdefined\SegmentThree 
+	\subsection{Segmentation 3}
+	
+	\foreach \i in \SegmentsThreeComponent
+	{%
+	    \edef\FileNameMetric{\OutputHistory{3}/history-\BU-Metric-\i.png}
+
+	    \IfFileExists{\FileNameMetric}{%  spurious spaces that may get inserted
+			\subsubsection{\i-Metric}
+			\begin{figure}[H]
+			\centering
+			\caption{Historical Trend for Metric-\textbf{$\i$}}
+			\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetric}\\
+			\end{figure}
+		}
+
+	    \edef\FileNameMetricTable{\OutputHistory{3}/history-\BU-Metric-\i-Table.png}
+
+	    \IfFileExists{\FileNameMetricTable}{%  spurious spaces that may get inserted
+% 			\subsubsection{\i-Metric}
+			\begin{figure}[H]
+			\centering
+			\caption{Historical Statistics for Metric-\textbf{$\i$}}
+			\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetricTable}\\
+			\end{figure}
+		}
+	
+	    \edef\FileNameRevenue{\OutputHistory{3}/history-\BU-Revenue-\i.png}
+		\edef\FileNameRevenueTable{\OutputHistory{3}/history-\BU-Revenue-\i-Table.png}
+	    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+	    	\subsubsection{\i-Revenue}
+			\begin{figure}[H]
+			\centering
+			\caption{Historical Trend for Revenue-\textbf{$\i$}}
+	        \includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}\\
+			\end{figure}
+		}
+		\IfFileExists{\FileNameRevenueTable}{%  spurious spaces that may get inserted
+% 			\subsubsection{\i-Revenue}
+			\begin{figure}[H]
+			\centering
+			\caption{Historical Statistics for Revenue-\textbf{$\i$}}
+			\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenueTable}\\
+			\end{figure}
+		}
+		\newpage
+	}
+\fi

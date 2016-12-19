@@ -1,0 +1,460 @@
+
+\ifdefined\SegmentOne
+    \edef\i{1}%
+	\subsection{Segmentation \i - Model Results}
+	\foreach \j in \ModelSummaryNum
+	{
+    	\edef\FileNameInfo{\OutputRegSummary{\i}/forecast-\BU-Model\j-Info.png}%
+    	\edef\FileNameInfotwo{\OutputRegSummary{\i}/forecast-\BU-Model\j-Info2.png}%
+    	\IfFileExists{\FileNameInfo}{
+	    	\subsubsection{Model \j - Overview}
+			\begin{figure}[H]
+			\centering
+			\caption{Summary of Model Results for Segment \i, Model \j}
+			\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameInfo}\\
+			\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameInfotwo}
+			\end{figure}
+		}
+		
+		\edef\FileNameAgg{\OutputRegSummary{\i}/forecast-\BU-Model\j-Aggregate.png}%
+		\edef\FileNameAggTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Aggregate-Table.png}%
+    	\IfFileExists{\FileNameAgg}{
+			\begin{figure}[H]
+			\centering
+			\caption{Aggregated Model Results for Segment \i, Model \j}
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameAgg}\\
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameAggTable}
+			\end{figure}
+		}
+		
+		\foreach \k in \SegmentsOneComponent 
+		{
+			\edef\FileNameIndividualMetric{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k.png}%
+			\edef\FileNameIndividualMetricTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Table.png}%
+			\edef\FileNameIndividualMetricBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest.png}%%%%
+			\edef\FileNameIndividualConvertedRevenue{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-ConvertedRevenue.png}%%%%
+			\edef\FileNameIndividualConvertedRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest-ConvertedRevenue.png}%%%%
+			% \edef\FileNameIndividualConvertedRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest-ConvertedRevenue.png}%%%%
+			
+    		\IfFileExists{\FileNameIndividualMetric}{
+   		    	\subsubsection{Model \j: \k Metric}
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Metric}
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetric}\\%%%%
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetricTable}\\%%%%
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetricBacktest}%%%%
+				\end{figure}
+				
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Converted Revenue}
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameIndividualConvertedRevenue}\\%%%%
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameIndividualConvertedRevenueBacktest}%%%%
+				\end{figure}
+				
+				\foreach \l in \DiagnosticTest
+				{
+					\edef\FileNameDiagnostic{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Diagnostic\l.png}%
+					\IfFileExists{\FileNameDiagnostic}{
+						\begin{figure}[H]
+						\centering
+						\caption{Diagnostic Test for Model \j: \k - Metric}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiagnostic}
+						\end{figure}
+					}
+				}
+				%ExcludeAcient
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Metric-\k/Out-of-sample-test-ExcludeAcient\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Metric (Exclude Acient \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				
+				%ExcludeRecent
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Metric-\k/Out-of-sample-test-ExcludeRecent\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Metric (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+			}
+
+
+			\edef\FileNameIndividualRevenue{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k.png}%
+			\edef\FileNameIndividualRevenueTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Table.png}%
+			\edef\FileNameIndividualRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Backtest.png}%
+			\IfFileExists{\FileNameIndividualRevenue}{
+				\subsubsection{Model \j: \k Revenue}
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Revenue}
+				\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameIndividualRevenue}\\
+				\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{\FileNameIndividualRevenueTable}\\
+				\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{\FileNameIndividualRevenueBacktest}\\
+				\end{figure}
+				
+				\foreach \l in \DiagnosticTest
+				{
+					\edef\FileNameDiagnostic{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Diagnostic\l.png}%
+					\IfFileExists{\FileNameDiagnostic}{
+						\begin{figure}[H]
+						\centering
+						\caption{Diagnostic Test for Model \j: \k - Revenue}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiagnostic}
+						\end{figure}
+					}
+				}
+				%ExcludeAcient
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Revenue-\k/Out-of-sample-test-ExcludeAcient\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Revenue (Exclude Acient \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				
+				%ExcludeRecent				
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Revenue-\k/Out-of-sample-test-ExcludeRecent\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Revenue (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				
+			}
+		}
+		\newpage
+	}
+	\newpage
+\fi
+
+\ifdefined\SegmentTwo
+    \edef\i{2}%
+	\subsection{Segmentation \i - Model Results}
+	\foreach \j in \ModelSummaryNum
+	{
+    	\edef\FileNameInfo{\OutputRegSummary{\i}/forecast-\BU-Model\j-Info.png}%
+    	\edef\FileNameInfotwo{\OutputRegSummary{\i}/forecast-\BU-Model\j-Info2.png}%
+    	\IfFileExists{\FileNameInfo}{
+	    	\subsubsection{Model \j - Overview}
+			\begin{figure}[H]
+			\centering
+			\caption{Summary of Model Results for Segment \i, Model \j}
+			\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameInfo}\\
+			\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameInfotwo}
+			\end{figure}
+		}
+
+		\edef\FileNameAgg{\OutputRegSummary{\i}/forecast-\BU-Model\j-Aggregate.png}%
+		\edef\FileNameAggTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Aggregate-Table.png}%
+    	\IfFileExists{\FileNameAgg}{
+			\begin{figure}[H]
+			\centering
+			\caption{Aggregated Model Results for Segment \i, Model \j}
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameAgg}\\
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameAggTable}
+			\end{figure}
+		}
+		
+		\foreach \k in \SegmentsTwoComponent 
+		{
+		
+			\edef\FileNameIndividualMetric{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k.png}%
+			\edef\FileNameIndividualMetricTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Table.png}%
+			\edef\FileNameIndividualMetricBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest.png}%%%%
+			\edef\FileNameIndividualConvertedRevenue{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-ConvertedRevenue.png}%%%%
+			\edef\FileNameIndividualConvertedRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest-ConvertedRevenue.png}%%%%
+			
+    		\IfFileExists{\FileNameIndividualMetric}{
+   		    	\subsubsection{Model \j: \k Metric}
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Metric}
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetric}\\%%%%
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetricTable}\\%%%%
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetricBacktest}%%%%
+				\end{figure}
+				
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Converted Revenue}
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameIndividualConvertedRevenue}\\%%%%
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameIndividualConvertedRevenueBacktest}%%%%
+				\end{figure}	
+				
+				\foreach \l in \DiagnosticTest
+				{
+					\edef\FileNameDiagnostic{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Diagnostic\l.png}%
+					\IfFileExists{\FileNameDiagnostic}{
+						\begin{figure}[H]
+						\centering
+						\caption{Diagnostic Test for Model \j: \k - Metric}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiagnostic}
+						\end{figure}
+					}
+				}
+				%ExcludeAcient
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Metric-\k/Out-of-sample-test-ExcludeAcient\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Metric (Exclude Acient \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				%ExcludeRecent				
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Metric-\k/Out-of-sample-test-ExcludeRecent\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Metric (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+			}
+
+			\edef\FileNameIndividualRevenue{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k.png}%
+			\edef\FileNameIndividualRevenueTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Table.png}%
+			\edef\FileNameIndividualRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Backtest.png}%
+			\IfFileExists{\FileNameIndividualRevenue}{
+			 \subsubsection{Model \j: \k Revenue}
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Revenue}
+				\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameIndividualRevenue}\\
+				\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{\FileNameIndividualRevenueTable}\\
+				\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{\FileNameIndividualRevenueBacktest}\\
+				\end{figure}
+				
+				\foreach \l in \DiagnosticTest
+				{
+					\edef\FileNameDiagnostic{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Diagnostic\l.png}%
+					\IfFileExists{\FileNameDiagnostic}{
+						\begin{figure}[H]
+						\centering
+						\caption{Diagnostic Test for Model \j: \k - Revenue}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiagnostic}
+						\end{figure}
+					}
+				}			
+				%ExcludeAcient
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Revenue-\k/Out-of-sample-test-ExcludeAcient\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Revenue (Exclude Acient \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				
+				%ExcludeRecent				
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Revenue-\k/Out-of-sample-test-ExcludeRecent\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Revenue (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+					
+			}	
+		}
+		\newpage
+	}
+	\newpage
+\fi
+
+\ifdefined\SegmentThree
+    \edef\i{3}%
+	\subsection{Segmentation \i - Model Results}
+	\foreach \j in \ModelSummaryNum
+	{
+    	\edef\FileNameInfo{\OutputRegSummary{\i}/forecast-\BU-Model\j-Info.png}%
+    	\edef\FileNameInfotwo{\OutputRegSummary{\i}/forecast-\BU-Model\j-Info2.png}%
+    	\IfFileExists{\FileNameInfo}{
+	    	\subsubsection{Model \j - Overview}
+			\begin{figure}[H]
+			\centering
+			\caption{Summary of Model Results for Segment \i, Model \j}
+			\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameInfo}\\
+			\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameInfotwo}
+			\end{figure}
+		}
+		
+		\edef\FileNameAgg{\OutputRegSummary{\i}/forecast-\BU-Model\j-Aggregate.png}%
+		\edef\FileNameAggTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Aggregate-Table.png}%
+    	\IfFileExists{\FileNameAgg}{
+			\begin{figure}[H]
+			\centering
+			\caption{Aggregated Model Results for Segment \i, Model \j}
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameAgg}\\
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameAggTable}
+			\end{figure}
+		}
+
+		\foreach \k in \SegmentsThreeComponent 
+		{
+			\edef\FileNameIndividualMetric{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k.png}%
+			\edef\FileNameIndividualMetricTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Table.png}%
+			\edef\FileNameIndividualMetricBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest.png}%%%%
+			\edef\FileNameIndividualConvertedRevenue{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-ConvertedRevenue.png}%%%%
+			\edef\FileNameIndividualConvertedRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Backtest-ConvertedRevenue.png}%%%%
+			
+    		\IfFileExists{\FileNameIndividualMetric}{
+   		    	\subsubsection{Model \j: \k Metric}
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Metric}
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetric}\\%%%%
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetricTable}\\%%%%
+				\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameIndividualMetricBacktest}%%%%
+				\end{figure}
+				
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Converted Revenue}
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameIndividualConvertedRevenue}\\%%%%
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameIndividualConvertedRevenueBacktest}%%%%
+				\end{figure}
+				
+				\foreach \l in \DiagnosticTest
+				{
+					\edef\FileNameDiagnostic{\OutputRegSummary{\i}/forecast-\BU-Model\j-Metric-\k-Diagnostic\l.png}%
+					\IfFileExists{\FileNameDiagnostic}{
+						\begin{figure}[H]
+						\centering
+						\caption{Diagnostic Test for Model \j: \k - Metric}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiagnostic}
+						\end{figure}
+					}
+				}
+				%ExcludeAcient
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Metric-\k/Out-of-sample-test-ExcludeAcient\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Metric (Exclude Acient \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				
+				%ExcludeRecent				
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Metric-\k/Out-of-sample-test-ExcludeRecent\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Metric (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+							
+			}
+
+			\edef\FileNameIndividualRevenue{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k.png}%
+			\edef\FileNameIndividualRevenueTable{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Table.png}%
+			\edef\FileNameIndividualRevenueBacktest{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Backtest.png}%
+			\IfFileExists{\FileNameIndividualRevenue}{
+			 \subsubsection{Model \j: \k Revenue}
+				\begin{figure}[H]
+				\centering
+				\caption{Model Results for Model \j: \k - Revenue}
+				\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameIndividualRevenue}\\
+				\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{\FileNameIndividualRevenueTable}\\
+				\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{\FileNameIndividualRevenueBacktest}\\
+				\end{figure}
+				
+				\foreach \l in \DiagnosticTest
+				{
+					\edef\FileNameDiagnostic{\OutputRegSummary{\i}/forecast-\BU-Model\j-Revenue-\k-Diagnostic\l.png}%
+					\IfFileExists{\FileNameDiagnostic}{
+						\begin{figure}[H]
+						\centering
+						\caption{Diagnostic Test for Model \j: \k - Revenue (Exclude Acient \l
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiagnostic}
+						\end{figure}
+					}
+				}			
+				%ExcludeAcient
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Revenue-\k/Out-of-sample-test-ExcludeAcient\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Revenue (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+				
+				%ExcludeRecent				
+				\foreach \m in \OutSampleTest
+				{
+					\edef\FileOutSample{\OutputRegSummary{\i}/Model\j-Revenue-\k/Out-of-sample-test-ExcludeRecent\m.png}%
+					\IfFileExists{\FileOutSample}{
+						\begin{figure}[H]
+						\centering
+						\caption{Out-of-Sample Test for Model \j: \k - Revenue (Exclude Recent \m
+						Periods)}
+						\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileOutSample}
+						\end{figure}
+					}
+				}
+						
+			}	
+		}
+		\newpage
+	}
+	\newpage
+\fi

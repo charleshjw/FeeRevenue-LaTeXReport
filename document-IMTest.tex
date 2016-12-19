@@ -1,0 +1,46 @@
+\documentclass{article}
+\newcommand\version{Output-Q22016-IMTest}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{IM}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{IM, AM, LongTerm, TotalIndex, EquityIndex,
+FIIndex, TotalEquity, GlobalEquity, USEquity, TotalFI, USFI, GlobalFI,
+TotalAlts, AltAndAbs, OverlayAndCurrency, LDI, ShortTerm, WM,
+AM_Adjustment, WM_Adjustment}
+
+% \newcommand\SegmentsOneComponent{TotalFI, USFI, GlobalFI}
+
+\section{\BU - Market Impact}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\def\BU{IM}
+\def\SegmentTwo{2}
+\newcommand\SegmentsTwoComponent{IM, AM, LongTerm, TotalIndex, EquityIndex,
+FIIndex, TotalEquity, GlobalEquity, USEquity, TotalFI, USFI, GlobalFI,
+TotalAlts, AltAndAbs, OverlayAndCurrency, LDI, ShortTerm, WM,
+AM_Adjustment, WM_Adjustment}
+
+% \newcommand\SegmentsTwoComponent{TotalFI, USFI, GlobalFI}
+\section{\BU - Client Cash Flow}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\end{document}

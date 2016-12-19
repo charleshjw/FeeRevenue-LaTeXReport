@@ -1,0 +1,40 @@
+\documentclass{article}
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{IM}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{IM, AM, LongTerm, TotalIndex, EquityIndex,
+FIIndex, TotalEquity, GlobalEquity, USEquity, TotalFI, USFI, GlobalFI,
+TotalAlts, AltAndAbs, OverlayAndCurrency, LDI, ShortTerm, WM,
+AM_Adjustment, WM_Adjustment}
+
+\section{\BU - Segmentation 1}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+% \def\BU{IM}
+% \def\SegmentTwo{2}
+% \newcommand\SegmentsTwoComponent{IM, PrivateWealth, AssetManagement,
+% Distribution, MGMT, Boutiques, Amherst, EACM, Insight, StrategySolution, TBC,
+% ARX, NEWTON, SingulerGuff, CenterSquare, Standish, WalterScott, MCM, Alcentra}
+% 
+% \section{\BU - Segmentation 2}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummaryByModel.tex}
+% \CleanUp
+
+\end{document}

@@ -1,0 +1,245 @@
+
+\foreach \i in \SegmentsTwoComponent {
+% 		\edef\FileNameMetric{\OutputHistory{2}/history-\BU-Metric-\i.png}
+% 
+% 	    \IfFileExists{\FileNameMetric}{%  spurious spaces that may get inserted
+% 		\subsection{\i-Metric}
+% 			\subsubsection{History Trend}
+% 			\begin{figure}[H]
+% 			\centering
+% 			\caption{Historical Trend for Metric-\textbf{$\i$}}
+% 			\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetric}\\
+% 			\end{figure}
+% 		}
+% 	
+% 	    \edef\FileNameMetricTable{\OutputHistory{2}/history-\BU-Metric-\i-Table.png}
+% 	
+% 	    \IfFileExists{\FileNameMetricTable}{%  spurious spaces that may get inserted
+% 	% 		\subsubsection{\i-Metric}
+% 			\begin{figure}[H]
+% 			\centering
+% 			\caption{Historical Statistics for Metric-\textbf{$\i$}}
+% 			\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameMetricTable}\\
+% 			\end{figure}
+% 		}
+		
+	    \edef\FileName{\OutputCCFExternal{2}//\i/CrossCorrelationWithFactor-\i-Metric.png}%
+	    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+	    \subsection{\i-Metric}
+	    	\subsubsection{Correlation}
+			\begin{figure}[H]
+			\centering
+			\caption{Cross Correlation Matrix between \textbf{$\i$} Metric and External
+			Factors}
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileName}
+			\end{figure}
+		}
+	
+		\edef\FileNameDiff{\OutputCCFExternal{2}//\i/CrossCorrelationWithFactor-\i-Metric-Diff.png}%
+		\IfFileExists{\FileNameDiff}{%  spurious spaces that may get inserted
+			\subsubsection{Correlation-Diff}
+			\begin{figure}[H]
+			\centering
+			\caption{Cross Correlation Matrix between differenced \textbf{$\i$} Metric and
+			External Factors}
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiff}
+			\end{figure}
+		}
+
+
+		\edef\FileName{\OutputDiffReg{2}/V1-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+		\IfFileExists{\FileName} { %  spurious spaces that may get inserted
+		\subsubsection{DiffRegression, 1V}
+			\begin{figure}[H]
+			\centering
+			\caption{Algorithmic Variable Selection for Metric \textbf{$\i$} with
+			One Variable}
+		    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+			\end{figure}
+			
+			\foreach \j in {1,2,...,\MaxTestModels} {
+			    \edef\FileNameBacktest{\OutputDiffReg{2}/V1-Metric-\i/Diff-Model-backtesting-\BU-\j.png}%
+			  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+					\begin{figure}[H]
+					\centering
+					\j\\
+				    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}
+					\end{figure}
+				}
+		
+				\edef\FileNameBacktestLev{\OutputDiffReg{2}/V1-Metric-\i/Diff-Model-backtesting-level-\BU-\j.png}%
+			  	\IfFileExists{\FileNameBacktestLev}{%  spurious spaces that may get inserted
+					\begin{figure}[H]
+					\centering
+				    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestLev}
+					\end{figure}
+				}
+			}
+		}
+		
+    	\edef\FileName{\OutputDiffReg{2}/V2-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    	\IfFileExists{\FileName}{%  spurious spaces that may get inserted
+		\subsubsection{DiffRegression, 2V}
+			\begin{figure}[H]
+			\centering
+			\caption{Algorithmic Variable Selection for First Differenced Metric
+			\textbf{$\i$} with Two Variables}
+		    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+			\end{figure}
+		}
+	
+		\foreach \j in {1,2,...,\MaxTestModels} {
+		    \edef\FileNameBacktest{\OutputDiffReg{2}/V2-Metric-\i/Diff-Model-backtesting-\BU-\j.png}%
+		  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+				\j\\
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}
+				\end{figure}
+			}
+	
+			\edef\FileNameBacktestLev{\OutputDiffReg{2}/V2-Metric-\i/Diff-Model-backtesting-level-\BU-\j.png}%
+		  	\IfFileExists{\FileNameBacktestLev}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestLev}
+				\end{figure}
+			}
+		}
+    	
+
+%%%%%%%%%%%%%%%%Revenue
+% 		\edef\FileNameRevenue{\OutputHistory{2}/history-\BU-Revenue-\i.png}
+% 
+% 	    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+% 	    \subsection{\i-Revenue}
+% 			\subsubsection{History Trend}
+% 	    
+% 	    	\subsubsection{\i-Revenue}
+% 			\begin{figure}[H]
+% 			\centering
+% 			\caption{Historical Trend for Revenue-\textbf{$\i$}}
+% 	        \includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}\\
+% 			\end{figure}
+% 		}
+% 	
+% 		\edef\FileNameRevenueTable{\OutputHistory{2}/history-\BU-Revenue-\i-Table.png}
+% 	
+% 		\IfFileExists{\FileNameRevenueTable}{%  spurious spaces that may get inserted
+% 	% 		\subsubsection{\i-Revenue}
+% 			\begin{figure}[H]
+% 			\centering
+% 			\caption{Historical Statistics for Revenue-\textbf{$\i$}}
+% 			\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenueTable}\\
+% 			\end{figure}
+% 		}
+
+		\edef\FileName{\OutputCCFExternal{2}//\i/CrossCorrelationWithFactor-\i-Fee.png}%
+	    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+	    \subsection{\i-Revenue}
+	    	\subsubsection{Correlation}
+			\begin{figure}[H]
+			\centering
+			\caption{Cross Correlation Matrix between \textbf{$\i$} Revenue and External
+			Factors}
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileName}
+			\end{figure}
+		}
+	
+	    \edef\FileNameDiff{\OutputCCFExternal{2}//\i/CrossCorrelationWithFactor-\i-Fee-Diff.png}%
+		\IfFileExists{\FileNameDiff}{%  spurious spaces that may get inserted
+			\subsubsection{Correlation-Diff}
+			\begin{figure}[H]
+			\centering
+			\caption{Cross Correlation Matrix between differenced \textbf{$\i$} Revenue
+			and External Factors}
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameDiff}
+			\end{figure}
+		}
+
+	    \edef\FileNameRevenue{\OutputDiffReg{2}/V1-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+		\IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+		\subsubsection{DiffRegression, 1V}
+			\begin{figure}[H]
+			\centering
+			\caption{Algorithmic Variable Selection for First Differenced Revenue
+			\textbf{$\i$} with One Variable}
+		    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+			\end{figure}
+		}
+	
+		\foreach \k in {1,2,...,\MaxTestModels} {
+		    \edef\FileNameBacktestRev{\OutputDiffReg{2}/V1-Revenue-\i/Diff-Model-backtesting-\BU-\k.png}%
+		  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+				\k\\
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}
+				\end{figure}
+			}
+	
+			\edef\FileNameBacktestRevLevel{\OutputDiffReg{2}/V1-Revenue-\i/Diff-Model-backtesting-level-\BU-\k.png}%
+		  	\IfFileExists{\FileNameBacktestRevLevel}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRevLevel}
+				\end{figure}
+			}
+		}
+		
+	    \edef\FileNameRevenue{\OutputDiffReg{2}/V2-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+	    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+		\subsubsection{DiffRegression, 2V}
+			\begin{figure}[H]
+			\centering
+			\caption{Algorithmic Variable Selection for First Differenced Revenue
+			\textbf{$\i$} with Two Variables}
+		    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+			\end{figure}
+		}
+	
+		\foreach \k in {1,2,...,\MaxTestModels} {
+		    \edef\FileNameBacktestRev{\OutputDiffReg{2}/V2-Revenue-\i/Diff-Model-backtesting-\BU-\k.png}%
+		  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+				\k\\
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}
+				\end{figure}
+			}
+	
+			\edef\FileNameBacktestRevLevel{\OutputDiffReg{2}/V2-Revenue-\i/Diff-Model-backtesting-level-\BU-\k.png}%
+		  	\IfFileExists{\FileNameBacktestRevLevel}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRevLevel}
+				\end{figure}
+			}
+		}
+	    
+		\foreach \k in {1,2,...,\MaxTestModels} {
+		    \edef\FileNameBacktestRev{\OutputRegQuarter{2}/V2-Revenue-\i/Test-backtesting-and-forecast-\BU-Revenue-\i\k.png}%
+		  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+				\begin{figure}[H]
+				\centering
+				\k\\
+			    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}\\
+				\end{figure}
+			}
+		}
+		
+		\edef\FileNamePlot{\OutputMovingAverage{2}//\i/MovingAverageCombinedPlot.png}%
+	    \edef\FileNameTable{\OutputMovingAverage{2}//\i/MovingAverageCombinedTable.png}%
+	    
+	    \IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{Moving Average Model}
+			\begin{figure}[H]
+			\centering
+			\caption{Moving Average Models for \textbf{$\i$} with various look-back
+			periods}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+		}
+		
+}

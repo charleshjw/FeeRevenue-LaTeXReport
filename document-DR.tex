@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{DR}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{DR, DRexAmortization, IssuranceFees,
+CancellationFees, SponsoredProgram, DividendFees, ServicingFee, AllOtherRev, MiscFee, LicensingFee, TaxReclaimFee, Other,
+Amortization}
+
+\section{\BU-Segmentation 1}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+% \def\BU{DR}
+% \def\SegmentTwo{2}
+% \newcommand\SegmentsTwoComponent{DR, ProductManagement, GlobalSales,
+% ADRCenter, MarketSolutions, Others}
+% 
+% \section{\BU-Segmentation 2}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary2.tex}
+% \CleanUp
+
+\end{document}

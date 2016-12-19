@@ -1,0 +1,151 @@
+\ifdefined\version \else \newcommand\version{Output-Q22016-CCAR} \fi
+\ifdefined\Output \else \newcommand\Output{C:/workspace2016/Revenue} \fi
+
+% \newcommand\version{Output-Q22016-DFAST} 
+% \newcommand\Output{C:/workspace2016/Revenue}
+
+\usepackage{graphicx} %import png files
+% \usepackage{amstext}
+%\usepackage{csvsimple} %import csv file
+% \usepackage[landscape,margin=2cm]{geometry} %page set up
+\usepackage[margin=2cm]{geometry} %page set up
+\usepackage{float} %fix
+% graphs' positions
+\usepackage[bookmarks]{hyperref}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{csvsimple}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{xcolor}
+\definecolor{color_gold}{HTML}{AB8433}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\newcommand\OutputRevenueStructure{\Output/Document/RevenueStructure}
+\newcommand\OutputComponent[1]{\Output/\version/\BU/Analysis-ComponentAnalysis-Segment-#1}
+\newcommand\OutputSegmentation[1]{\Output/\version/\BU/Analysis-Materiality-Segment-#1}
+\newcommand\OutputHistory[1]{\Output/\version/\BU/Analysis-History-Segment-#1}
+\newcommand\OutputCCFExternal[1]{\Output/\version/\BU/Analysis-CrossCorrelation-External-Segment-#1}
+\newcommand\OutputReg[1]{\Output/\version/\BU/Analysis-Regression-Segment-#1}
+\newcommand\OutputRegQuarter[1]{\Output/\version/\BU/Analysis-Regression-Quarter-Segment-#1}
+\newcommand\OutputDiffReg[1]{\Output/\version/\BU/Analysis-DiffRegression-Segment-#1}
+\newcommand\OutputRegSummary[1]{\Output/\version/\BU/Regression-Summary-Segment-#1}
+\newcommand\OutputMovingAverage[1]{\Output/\version/\BU/Analysis-MovingAverage-Segment-#1}
+\newcommand\OutputSeasonal[1]{\Output/\version/\BU/Analysis-SeaonalDecomposition-Segment-#1}
+\newcommand\OutputArimax[1]{\Output/\version/\BU/Analysis-ARIMAX-Segment-#1}
+\newcommand\OutputTSAnalysis[1]{\Output/\version/\BU/Analysis-TimeSeries-#1}
+
+\newcommand\SeasonTime{0,1,2,3}
+\newcommand\DiagnosticTest{1,2,3,4,5,6,7,8,9,10}
+\newcommand\ArimaxNum{1,...,100}
+\newcommand\MaxTestModels{20}
+
+\def\imagetop#1{\vtop{\null\hbox{#1}}} %align two graphs in the table
+\usepackage{tikz}%design for front page
+\newcommand\pagetitlecenter[1] {{\Large{\textbf{#1}}}}
+
+\usepackage{fancyhdr}
+\fancypagestyle{myheader} {
+  \fancyhf{}% Clear all headers/footers
+  \fancyheadoffset{0cm}  
+  \fancyhead[R]{BNY Mellon - \BU}% Header Centred
+  \fancyhead[L]{
+  	\begin{picture}(0,0)
+  	\put(0,0){\includegraphics[width=3cm]{../Coverpage/bnym_invested_4cp_pos_GOLD.png}}
+  	\end{picture}
+  	}% Header Centred
+  \fancyfoot[C]{-\thepage-}% Footer Centred
+  \renewcommand{\headrulewidth}{1pt}% 2pt header rule
+  \renewcommand{\headrule}{\hbox to\headwidth{%
+    \color{color_gold}\leaders\hrule height \headrulewidth\hfill}}
+  \renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+\pagestyle{myheader}
+
+\def\imagetop#1{\vtop{\null\hbox{#1}}} %align two graphs in the table
+\usepackage{afterpage}
+
+% ------------------------------------------------------------------------------
+% Definitions (do not change this)
+% ------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\makeatletter							% Title
+\def\printtitle{%
+    {\centering \@title\par}}
+\makeatother
+
+\makeatletter							% Author
+\def\printauthor{%
+    {\centering \large \@author}}
+\makeatother
+
+% ------------------------------------------------------------------------------
+% Metadata (Change this)
+% ------------------------------------------------------------------------------
+\title{	\normalsize \textsc{Model Development Handbook}% Subtitle of the
+% document
+		 	\\[2.0cm]													% 2cm spacing
+			\HRule{0.5pt} \\										% Upper rule
+			\LARGE \textbf{\uppercase{Fee Revenue Model Development Package} - \BU\\
+			\large Data Version: \version}
+			% Title
+			\HRule{2pt} \\ [0.5cm]								% Lower rule + 0.5cm spacing
+			\normalsize \today									% Todays date
+		}
+
+\author{
+		Corporate Strategy and Planning Management\\
+		Bank of New York Mellon Corporation\\
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% \section{Segmentation Alternatives}
+% \input{../Revenue/Segmentation.tex}
+% 
+% % \section{Historical Trend}
+% % \input{../Revenue/HistoricalTrend.tex}
+% % 
+% % \section{Correlation Analysis}
+% % \input{../Revenue/CorrelationAnalysis.tex}
+
+\ifdefined\SegmentOne
+\section{Algorithmic Approach for Regression Model - Segmentation 1}
+\input{../Revenue/AlgorithmicApproach-segmentation1ByModel-IMTest.tex}
+\fi
+
+\ifdefined\SegmentTwo
+\section{Algorithmic Approach for Regression Model - Segmentation 2}
+\input{../Revenue/AlgorithmicApproach-segmentation2ByModel.tex}
+\fi
+
+\ifdefined\SegmentThree
+\section{Algorithmic Approach for Regression Model - Segmentation 3}
+\input{../Revenue/AlgorithmicApproach-segmentation3ByModel.tex}
+\fi
+% 
+% % \section{Moving Average Models}
+% % \input{../Revenue/MovingAverage.tex}
+% % 
+% % \section{Seasonal Decomposition Models}
+% % \input{../Revenue/SeasonalDecomposition.tex}
+% % 
+% % \section{ARIMAX Model Class}
+% % \input{../Revenue/ARIMAX.tex}
+
+\end{document}
+

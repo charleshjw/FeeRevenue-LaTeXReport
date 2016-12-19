@@ -1,0 +1,67 @@
+\documentclass{article}
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \def\BU{BK}
+% \def\SegmentOne{1}
+% \def\SegmentsOneComponent{BK}
+% 
+% \section{\BU-Champion Model}
+% 	\def\ModelSummaryNum{1}
+% 	\input{./ModelSummary.tex}
+% \CleanUp
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{AS}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{AS, AUCRelatedFee, MutualFund, UIT,
+DomesticCustody, InternationalCustody, LiquidityService, SoftwareService, TrustCust,
+SpecialService, DCTrust, ServicingFee, FoundationEndowment,
+OtherAUCRelatedFees, OtherInvestmentIncome}
+
+% \newcommand\SegmentsOneLevelOne{AS}
+% \newcommand\SegmentsOneLevelTwo{AUCRelatedFee,OtherInvestmentIncome}
+% \newcommand\SegmentsOneLevelThree{MutualFund, UIT, DomesticCustody,
+% InternationalCustody, LiquidityService, SoftwareService, TrustCust,
+% SpecialService, DCTrust, ServicingFee, FoundationEndowment, OtherAUCRelatedFees,
+% OtherInvestmentIncome}
+
+\section{\BU-Segmentation 1}
+	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+	\input{./Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+% \def\BU{AS}
+% \def\SegmentTwo{2}
+% \def\SegmentsTwoComponent{AS, AIS, Structured_Products, MiddleMarket, Eagle, USAS, USMiddleMarket, CGNP,
+% Platinum, FI, LATAM, OtherAmericas, EMEA, ASIA, Other}
+% \section{\BU-Segmentation 2}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummaryByModel.tex}
+% \CleanUp
+
+% \def\BU{AS}
+% \def\SegmentThree{3}
+% \def\SegmentsThreeComponent{AS, AUCRelatedFee, AIS, Structured_Products,
+% MiddleMarket, Eagle, USAS, USMiddleMarket, CGNP, Platinum, FI, LATAM,
+% OtherAmericas, EMEA, ASIA, Other}
+% 
+% \section{\BU-Segmentation 3}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary.tex}
+% \CleanUp
+
+\end{document}

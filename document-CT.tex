@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{CT}
+\def\SegmentOne{1} 
+\newcommand\SegmentsOneComponent{CT, APAC, EMEA, US, USFI, USMuni, USGovernment, USCorp, Insurance, USOther,
+DocCust, Other, CTBUTotal, Recon_Error}
+
+\section{\BU-Segmentation 1}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+% \def\BU{CT}
+% \def\SegmentTwo{2}
+% \newcommand\SegmentsTwoComponent{CT, LATAMandCanada, Asia, GovAndDefault, EMEA, US, FinancialInst, PublicFinance,
+% CorpAndInsurance, Total_Other}
+% 
+% \section{\BU-Segmentation 2}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary2.tex}
+% \CleanUp
+% 
+% \def\BU{CT}
+% \def\SegmentThree{3} 
+% \newcommand\SegmentsThreeComponent{CT, APAC, EMEA, EMEAFI, EMEAOther, Americas,
+% USGovernment, USFI, AmericasOther, Other}
+% 
+% \section{\BU-Segmentation 3}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary.tex}
+% \CleanUp
+
+
+\end{document}

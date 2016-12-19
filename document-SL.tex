@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\newcommand\Output{C:/workspace2016/Revenue}
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{SL}
+\def\SegmentTwo{2}
+\newcommand\SegmentsTwoComponent{SL}
+
+\section{\BU-Segmentation 2}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\end{document}

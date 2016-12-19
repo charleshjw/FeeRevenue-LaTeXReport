@@ -1,0 +1,39 @@
+\documentclass{article}
+\newcommand\version{Output-Q22016-CashMgmtTest}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \def\BU{CashMgmt}
+% \def\SegmentOne{1}
+% \newcommand\SegmentsOneComponent{GlobalPaymentExFX, USDWire, International,
+% APAC, EMEA, LATAM, Domestic, NORAM, NONTS, NonUSDWire}
+% 
+% \section{\BU - Segmentation 1}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary.tex}
+% \CleanUp
+
+\def\BU{CashMgmt}
+\def\SegmentTwo{2}
+\newcommand\SegmentsTwoComponent{GlobalPaymentExFX, USDWire, International,
+APAC, EMEA, LATAM, Domestic, NORAM, NONTS, NonUSDWire}
+
+\section{\BU - Segmentation 2}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\end{document}

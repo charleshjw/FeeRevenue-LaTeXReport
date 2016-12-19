@@ -1,0 +1,395 @@
+\subsection{Level Value, Monthly Observations, One Independent Variable}
+
+\foreach \i in \SegmentsTwoComponent 
+{%
+    \edef\FileName{\OutputReg{2}/V1-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Metric \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+		\end{figure}
+	}
+	\newpage
+	
+	\foreach \j in {1,2,...,20} {
+	    \edef\FileNameBacktest{\OutputReg{2}/V1-Metric-\i/Test-backtesting-and-forecast-\BU-Metric-\i\j.png}%
+	    \edef\FileNameBacktestTable{\OutputReg{2}/V1-Metric-\i/RegressionBacktestTable\j.png}%
+	    \edef\FileNameForecasttestTable{\OutputReg{2}/V1-Metric-\i/RegressionForecastTable\j.png}%
+	    
+	  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \j\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	
+    \edef\FileNameRevenue{\OutputReg{2}/V1-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+
+    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Revenue \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+		\end{figure}
+	}
+	
+	\foreach \k in {1,2,...,20} {
+	    \edef\FileNameBacktestRev{\OutputReg{2}/V1-Revenue-\i/Test-backtesting-and-forecast-\BU-Revenue-\i\k.png}%
+	    \edef\FileNameBacktestTable{\OutputReg{2}/V1-Revenue-\i/RegressionBacktestTable\k.png}%
+	    \edef\FileNameForecasttestTable{\OutputReg{2}/V1-Revenue-\i/RegressionForecastTable\k.png}%
+	  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\k\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	\newpage
+}
+
+
+\subsection{Level Value, Monthly Observations, Two Independent Variables}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+    \edef\FileName{\OutputReg{2}/V2-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Metric \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+		\end{figure}
+	}
+	\newpage
+	
+	\foreach \j in {1,2,...,20} {
+	    \edef\FileNameBacktest{\OutputReg{2}/V2-Metric-\i/Test-backtesting-and-forecast-\BU-Metric-\i\j.png}%
+	    \edef\FileNameBacktestTable{\OutputReg{2}/V2-Metric-\i/RegressionBacktestTable\j.png}%
+	    \edef\FileNameForecasttestTable{\OutputReg{2}/V2-Metric-\i/RegressionForecastTable\j.png}%
+	    
+	  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \j\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	
+    \edef\FileNameRevenue{\OutputReg{2}/V2-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+
+    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Revenue \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+		\end{figure}
+	}
+	
+	\foreach \k in {1,2,...,20} {
+	    \edef\FileNameBacktestRev{\OutputReg{2}/V2-Revenue-\i/Test-backtesting-and-forecast-\BU-Revenue-\i\k.png}%
+	    \edef\FileNameBacktestTable{\OutputReg{2}/V2-Revenue-\i/RegressionBacktestTable\k.png}%
+	    \edef\FileNameForecasttestTable{\OutputReg{2}/V2-Revenue-\i/RegressionForecastTable\k.png}%
+	  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\k\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	\newpage
+}
+
+\subsection{Level Value, Quarterly Observations, One Independent Variable}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+	\edef\FileName{\OutputRegQuarter{2}/V1-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Metric \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+		\end{figure}
+	}
+	\newpage
+	
+	\foreach \j in {1,2,...,20} {
+	    \edef\FileNameBacktest{\OutputRegQuarter{2}/V1-Metric-\i/Test-backtesting-and-forecast-\BU-Metric-\i\j.png}%
+	    \edef\FileNameBacktestTable{\OutputRegQuarter{2}/V1-Metric-\i/RegressionBacktestTable\j.png}%
+	    \edef\FileNameForecasttestTable{\OutputRegQuarter{2}/V1-Metric-\i/RegressionForecastTable\j.png}%
+	    
+	  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \j\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	
+    \edef\FileNameRevenue{\OutputRegQuarter{2}/V1-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+
+    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Revenue \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+		\end{figure}
+	}
+	
+	\foreach \k in {1,2,...,20} {
+	    \edef\FileNameBacktestRev{\OutputRegQuarter{2}/V1-Revenue-\i/Test-backtesting-and-forecast-\BU-Revenue-\i\k.png}%
+	    \edef\FileNameBacktestTable{\OutputRegQuarter{2}/V1-Revenue-\i/RegressionBacktestTable\k.png}%
+	    \edef\FileNameForecasttestTable{\OutputRegQuarter{2}/V1-Revenue-\i/RegressionForecastTable\k.png}%
+	  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\k\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	\newpage
+}
+
+\subsection{Level Value, Quarterly Observations, Two Independent Variables}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+	\edef\FileName{\OutputRegQuarter{2}/V2-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Metric \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+		\end{figure}
+	}
+	\newpage
+	
+	\foreach \j in {1,2,...,20} {
+	    \edef\FileNameBacktest{\OutputRegQuarter{2}/V2-Metric-\i/Test-backtesting-and-forecast-\BU-Metric-\i\j.png}%
+	    \edef\FileNameBacktestTable{\OutputRegQuarter{2}/V2-Metric-\i/RegressionBacktestTable\j.png}%
+	    \edef\FileNameForecasttestTable{\OutputRegQuarter{2}/V2-Metric-\i/RegressionForecastTable\j.png}%
+	    
+	  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \j\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	
+    \edef\FileNameRevenue{\OutputRegQuarter{2}/V2-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+
+    \IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+        \subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for Revenue \textbf{$\i$} with
+		One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+		\end{figure}
+	}
+	
+	\foreach \k in {1,2,...,20} {
+	    \edef\FileNameBacktestRev{\OutputRegQuarter{2}/V2-Revenue-\i/Test-backtesting-and-forecast-\BU-Revenue-\i\k.png}%
+	    \edef\FileNameBacktestTable{\OutputRegQuarter{2}/V2-Revenue-\i/RegressionBacktestTable\k.png}%
+	    \edef\FileNameForecasttestTable{\OutputRegQuarter{2}/V2-Revenue-\i/RegressionForecastTable\k.png}%
+	  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\k\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}\\
+% 		    Backtest Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameBacktestTable}\\
+% 		    Forecast Statistics\\
+% 		    \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{\FileNameForecasttestTable}
+			\end{figure}
+		}
+	}
+	\newpage
+}
+
+\subsection{First Differencing, One Independent Variable}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+    \edef\FileName{\OutputDiffReg{2}/V1-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+		\subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for First Differenced Metric
+		\textbf{$\i$} with One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+		\end{figure}
+	}
+
+	\foreach \j in {1,2,...,20} {
+	    \edef\FileNameBacktest{\OutputDiffReg{2}/V1-Metric-\i/Diff-Model-backtesting-\BU-\j.png}%
+	  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\j\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}
+			\end{figure}
+		}
+
+		\edef\FileNameBacktestLev{\OutputDiffReg{2}/V1-Metric-\i/Diff-Model-backtesting-level-\BU-\j.png}%
+	  	\IfFileExists{\FileNameBacktestLev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestLev}
+			\end{figure}
+		}
+	}
+
+    \edef\FileNameRevenue{\OutputDiffReg{2}/V1-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+	\IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+		\subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for First Differenced Revenue
+		\textbf{$\i$} with One Variable}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+		\end{figure}
+	}
+
+	\foreach \k in {1,2,...,20} {
+	    \edef\FileNameBacktestRev{\OutputDiffReg{2}/V1-Revenue-\i/Diff-Model-backtesting-\BU-\k.png}%
+	  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\k\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}
+			\end{figure}
+		}
+
+		\edef\FileNameBacktestRevLevel{\OutputDiffReg{2}/V1-Revenue-\i/Diff-Model-backtesting-level-\BU-\k.png}%
+	  	\IfFileExists{\FileNameBacktestRevLevel}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRevLevel}
+			\end{figure}
+		}
+	}
+	\newpage
+}
+
+\subsection{First Differencing, Two Independent Variables}
+\foreach \i in \SegmentsTwoComponent
+{%
+    \edef\FileName{\OutputDiffReg{2}/V2-Metric-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+		\subsubsection{\i-Metric}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for First Differenced Metric
+		\textbf{$\i$} with Two Variables}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileName}
+		\end{figure}
+	}
+
+	\foreach \j in {1,2,...,20} {
+	    \edef\FileNameBacktest{\OutputDiffReg{2}/V2-Metric-\i/Diff-Model-backtesting-\BU-\j.png}%
+	  	\IfFileExists{\FileNameBacktest}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\j\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktest}
+			\end{figure}
+		}
+
+		\edef\FileNameBacktestLev{\OutputDiffReg{2}/V2-Metric-\i/Diff-Model-backtesting-level-\BU-\j.png}%
+	  	\IfFileExists{\FileNameBacktestLev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestLev}
+			\end{figure}
+		}
+	}
+
+    \edef\FileNameRevenue{\OutputDiffReg{2}/V2-Revenue-\i/Model_Fitting_Results_Good_2Varaibles.png}%
+	\IfFileExists{\FileNameRevenue}{%  spurious spaces that may get inserted
+		\subsubsection{\i-Revenue}
+		\begin{figure}[H]
+		\centering
+		\caption{Algorithmic Variable Selection for First Differenced Revenue
+		\textbf{$\i$} with Two Variables}
+	    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\FileNameRevenue}
+		\end{figure}
+	}
+
+	\foreach \k in {1,2,...,20} {
+	    \edef\FileNameBacktestRev{\OutputDiffReg{2}/V2-Revenue-\i/Diff-Model-backtesting-\BU-\k.png}%
+	  	\IfFileExists{\FileNameBacktestRev}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+			\k\\
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRev}
+			\end{figure}
+		}
+
+		\edef\FileNameBacktestRevLevel{\OutputDiffReg{2}/V2-Revenue-\i/Diff-Model-backtesting-level-\BU-\k.png}%
+	  	\IfFileExists{\FileNameBacktestRevLevel}{%  spurious spaces that may get inserted
+			\begin{figure}[H]
+			\centering
+		    \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameBacktestRevLevel}
+			\end{figure}
+		}
+	}
+	\newpage
+}

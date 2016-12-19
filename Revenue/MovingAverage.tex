@@ -1,0 +1,62 @@
+\ifdefined\SegmentOne
+\subsection{Segmentation 1}
+
+\foreach \i in \SegmentsOneComponent
+{%
+    \edef\FileNamePlot{\OutputMovingAverage{1}//\i/MovingAverageCombinedPlot.png}%
+    \edef\FileNameTable{\OutputMovingAverage{1}//\i/MovingAverageCombinedTable.png}%
+    
+    \IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+    	\subsubsection{Moving Average Model for \i}
+		\begin{figure}[H]
+		\centering
+		\caption{Moving Average Models for \textbf{$\i$} with various look-back
+		periods}
+	    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNamePlot}
+	    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameTable}
+		\end{figure}
+	}
+}
+\fi
+
+\ifdefined\SegmentTwo
+\subsection{Segmentation 2}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+    \edef\FileNamePlot{\OutputMovingAverage{2}//\i/MovingAverageCombinedPlot.png}%
+    \edef\FileNameTable{\OutputMovingAverage{2}//\i/MovingAverageCombinedTable.png}%
+    
+    \IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+    	\subsubsection{Moving Average Model for \i}
+		\begin{figure}[H]
+		\centering
+		\caption{Moving Average Models for \textbf{$\i$} with various look-back
+		periods}
+	    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNamePlot}
+	    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameTable}
+		\end{figure}
+	}
+}
+\fi
+
+\ifdefined\SegmentThree 
+	\subsection{Segmentation 3}
+	\foreach \i in \SegmentsThreeComponent
+	{%
+	    \edef\FileNamePlot{\OutputMovingAverage{3}//\i/MovingAverageCombinedPlot.png}%
+	    \edef\FileNameTable{\OutputMovingAverage{3}//\i/MovingAverageCombinedTable.png}%
+	    
+	    \IfFileExists{\FileNamePlot}{%  spurious spaces that may get inserted
+	    	\subsubsection{Moving Average Model for \i}
+			\begin{figure}[H]
+			\centering
+			\caption{Moving Average Models for \textbf{$\i$} with various look-back
+			periods}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNamePlot}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameTable}
+			\end{figure}
+		}
+	}
+\fi
+

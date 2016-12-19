@@ -1,0 +1,244 @@
+% 
+% Segment business fee revenues into mutually exclusive revenues, each of which
+% have distinctive risk profile. We will present a few available revenue
+% segmentation below. Here are some questions help to start the process:
+% \begin{itemize}
+%   \item Given risk assessment results, how should we breakdown the \BU\ fee
+%   revenue?
+%   \item What non-financial business drivers are associated with revenues? Should
+%   we build model on business drivers or on revenue?
+%   \item What segmentation of revenue is satisfactory based on statistical
+%   robustness and business intuition?
+% %   \item Historical Data: Investigate available revenue and business drivers
+% %   data sources and historical time periods. Does available data include stress period that reflect risks identified by risk assessment? 
+%   \item Does business experence a regime change such as merger\&acquisition? The
+%   model should build on time periods of the same business regime.
+%   \item Is there any extraordinary events and outliers that need
+%   to be adjusted?
+% \end{itemize}
+% 
+% Revenue data is usually available at management unit level or at
+% product\/service level. At least 2 segmentation system will be discussed
+% below.\\
+% 
+% The historical trend of revenues and the cross correlation of revenue against
+% external macroeconomic variables are shown in the appendix.
+
+\ifdefined\SegmentOne
+	\subsection{Segmentation 1 - Revenue Structure}
+	\edef\FileNameStructure{\OutputRevenueStructure/RevenueStructure-\BU-1.png}%
+	\edef\FileNamePie{\OutputComponent{1}/Pie-N-\BU.png}%
+	\edef\FileNameSegment{\OutputSegmentation{1}/Statistics.png}%
+	
+	\IfFileExists{\FileNameStructure}{%
+		\subsubsection{Graphical Structure}
+		\begin{figure}[H]
+		\centering
+		\caption{Segmentation Structure}
+		\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{\FileNameStructure}\\
+		\end{figure}
+	}{\FileNameStructure\\}
+	
+	\IfFileExists{\FileNamePie}{%
+		\subsubsection{Revenue Component}
+		\begin{figure}[H]
+		\centering
+		\caption{Pie Chart of Segmentation}
+		\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{\FileNamePie}\\
+		\end{figure}
+	}{\FileNamePie\\}
+
+	\IfFileExists{\FileNameSegment}{%
+		\subsubsection{Revenue Materiality Assessment}
+		\begin{figure}[H]
+		\centering
+		\caption{Assessment of Revenue Materiality of Segmentation}
+		\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{\FileNameSegment}\\
+		\end{figure}
+	}{\FileNameSegment\\}
+	
+	%add outliers
+	\subsection{Segmentation 1 - Revenue Trend}
+	\foreach \k in \SegmentsOneComponent {
+ 		\edef\FileNameOutlierMetric{\OutputTSAnalysis{1}/\BU-1-Metric-\k-Outliers.png}%
+		\IfFileExists{\FileNameOutlierMetric}{
+			\subsubsection{History of Metric-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameOutlierMetric}
+			\end{figure}
+		}{}
+		
+		\edef\FileNameOutlierRevenue{\OutputTSAnalysis{1}/\BU-1-Revenue-\k-Outliers.png}%
+		\IfFileExists{\FileNameOutlierRevenue}{
+	    	\subsubsection{History of Revenue-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameOutlierRevenue}
+			\end{figure}
+		}{\FileNameOutlierRevenue}
+		%%Working on it!
+	}
+	%end update
+	
+	%add implied yield
+	\subsection{Segmentation 1 - Implied Yield}
+	\foreach \k in \SegmentsOneComponent {
+ 		\edef\FileNameIY{\OutputTSAnalysis{1}/\BU-1-Metric-\k-ImpliedYield.png}%
+		\IfFileExists{\FileNameIY}{
+			\subsubsection{Implied Yield-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameIY}
+			\end{figure}
+		}{}
+	}
+	%end update
+	
+\fi
+
+\ifdefined\SegmentTwo
+	
+	\subsection{Segmentation 2 - Revenue Structure}
+	\edef\FileNameStructure{\OutputRevenueStructure/RevenueStructure-\BU-2.png}%
+	\edef\FileNamePie{\OutputComponent{2}/Pie-N-\BU.png}%
+	\edef\FileNameSegment{\OutputSegmentation{2}/Statistics.png}%
+	
+	\IfFileExists{\FileNameStructure}{%
+		\subsubsection{Graphical Structure}
+		\begin{figure}[H]
+		\centering
+		\caption{Segmentation Structure}
+		\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{\FileNameStructure}\\
+		\end{figure}
+	}{\FileNameStructure\\}
+	
+	\IfFileExists{\FileNamePie}{%
+		\subsubsection{Revenue Component}
+		\begin{figure}[H]
+		\centering
+		\caption{Pie Chart of Segmentation}
+		\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{\FileNamePie}\\
+		\end{figure}
+	}{\FileNamePie\\}
+	
+	\IfFileExists{\FileNameSegment}{%
+		\subsubsection{Revenue Materiality Assessment}
+		\begin{figure}[H]
+		\centering
+		\caption{Assessment of Revenue Materiality of Segmentation}
+		\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{\FileNameSegment}\\
+		\end{figure}
+	}{\FileNameSegment\\}
+	
+		%add outliers
+	\subsection{Segmentation 2 - Revenue Trend}
+	\foreach \k in \SegmentsTwoComponent {
+ 		\edef\FileNameOutlierMetric{\OutputTSAnalysis{2}/\BU-2-Metric-\k-Outliers.png}%
+		\IfFileExists{\FileNameOutlierMetric}{
+			\subsubsection{History of Metric-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameOutlierMetric}
+			\end{figure}
+		}{}
+		
+		\edef\FileNameOutlierRevenue{\OutputTSAnalysis{2}/\BU-2-Revenue-\k-Outliers.png}%
+		\IfFileExists{\FileNameOutlierRevenue}{
+	    	\subsubsection{History of Revenue-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameOutlierRevenue}
+			\end{figure}
+		}{}
+		%%Working on it!
+	}
+	%end update
+	
+		
+	%add implied yield
+	\subsection{Segmentation 2 - Implied Yield}
+	\foreach \k in \SegmentsTwoComponent {
+ 		\edef\FileNameIY{\OutputTSAnalysis{2}/\BU-2-Metric-\k-ImpliedYield.png}%
+		\IfFileExists{\FileNameIY}{
+			\subsubsection{Implied Yield-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameIY}
+			\end{figure}
+		}{}
+	}
+	%end update
+\fi
+
+\ifdefined\SegmentThree
+	\subsection{Segmentation 3 - Revenue Structure}
+	\edef\FileNameStructure{\OutputRevenueStructure/RevenueStructure-\BU-3.png}%
+	\edef\FileNamePie{\OutputComponent{3}/Pie-N-\BU.png}%
+	\edef\FileNameSegment{\OutputSegmentation{3}/Statistics.png}%
+	
+	\IfFileExists{\FileNameStructure}{%
+		\subsubsection{Graphical Structure}
+		\begin{figure}[H]
+		\centering
+		\caption{Segmentation Structure}
+		\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{\FileNameStructure}\\
+		\end{figure}
+	}{\FileNameStructure\\}
+	
+	\IfFileExists{\FileNamePie}{%
+		\subsubsection{Revenue Component}
+		\begin{figure}[H]
+		\centering
+		\caption{Pie Chart of Segmentation}
+		\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{\FileNamePie}\\
+		\end{figure}
+	}{\FileNamePie\\}
+	
+	\IfFileExists{\FileNameSegment}{%
+		\subsubsection{Revenue Materiality Assessment}
+		\begin{figure}[H]
+		\centering
+		\caption{Assessment of Revenue Materiality of Segmentation}
+		\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{\FileNameSegment}\\
+		\end{figure}
+	}{\FileNameSegment\\}
+	
+	%add outliers
+	\subsection{Segmentation 3 - Revenue Trend}
+	\foreach \k in \SegmentsThreeComponent {
+ 		\edef\FileNameOutlierMetric{\OutputTSAnalysis{3}/\BU-3-Metric-\k-Outliers.png}%
+		\IfFileExists{\FileNameOutlierMetric}{
+			\subsubsection{History of Metric-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameOutlierMetric}
+			\end{figure}
+		}{}
+		
+		\edef\FileNameOutlierRevenue{\OutputTSAnalysis{3}/\BU-3-Revenue-\k-Outliers.png}%
+		\IfFileExists{\FileNameOutlierRevenue}{
+	    	\subsubsection{History of Revenue-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameOutlierRevenue}
+			\end{figure}
+		}{}
+		%%Working on it!
+	}
+	%end update
+	
+	%add implied yield
+	\subsection{Segmentation 3 - Implied Yield}
+	\foreach \k in \SegmentsThreeComponent {
+ 		\edef\FileNameIY{\OutputTSAnalysis{3}/\BU-3-Metric-\k-ImpliedYield.png}%
+		\IfFileExists{\FileNameIY}{
+			\subsubsection{Implied Yield-\k}
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{\FileNameIY}
+			\end{figure}
+		}{}
+	}
+	%end update
+\fi

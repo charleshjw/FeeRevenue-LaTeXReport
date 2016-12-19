@@ -1,0 +1,88 @@
+\ifdefined\SegmentOne
+\subsection{Segmentation 1}
+
+\foreach \i in \SegmentsOneComponent
+{%
+	\edef\FileNameDiagnostic{\OutputArimax{1}/\i/Revenue-\i-Diagnostic1.png} %
+    \IfFileExists{\FileNameDiagnostic}{ %  spurious spaces that may get inserted
+    \FileNameDiagnostic
+	    	\subsubsection{\i}
+			\begin{figure}[H]
+			\centering
+			\caption{Diagnostic Test for Revenue.\textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameDiagnostic}
+			\end{figure}
+	}
+	
+    \foreach \time in \ArimaxNum {
+	    \edef\FileNamePlot{\OutputArimax{1}/\i/forecast-\time.png}%
+    	\IfFileExists{\FileNamePlot}{
+			\begin{figure}[H]
+			\centering
+			\caption{ARIMAX Model Class Results for \textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+			\end{figure}
+    	}
+    }
+    \newpage
+}
+\fi
+
+\ifdefined\SegmentTwo
+\subsection{Segmentation 2}
+
+\foreach \i in \SegmentsTwoComponent
+{%
+ 	\edef\FileNameDiagnostic{\OutputArimax{2}/\i/Revenue-\i-Diagnostic1.png} %
+    \IfFileExists{\FileNameDiagnostic}{ %  spurious spaces that may get inserted
+    \FileNameDiagnostic
+	    	\subsubsection{\i}
+			\begin{figure}[H]
+			\centering
+			\caption{Diagnostic Test for Revenue.\textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameDiagnostic}
+			\end{figure}
+	}
+	
+    \foreach \time in \ArimaxNum {
+	    \edef\FileNamePlot{\OutputArimax{2}/\i/forecast-\time.png}%
+    	\IfFileExists{\FileNamePlot}{
+			\begin{figure}[H]
+			\centering
+			\caption{ARIMAX Model Class Results for \textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+			\end{figure}
+    	}
+    }
+    \newpage
+}
+\fi
+
+\ifdefined\SegmentThree 
+\foreach \i in \SegmentsThreeComponent
+{%
+ 	\edef\FileNameDiagnostic{\OutputArimax{3}/\i/Revenue-\i-Diagnostic1.png} %
+    \IfFileExists{\FileNameDiagnostic}{ %  spurious spaces that may get inserted
+    \FileNameDiagnostic
+	    	\subsubsection{\i}
+			\begin{figure}[H]
+			\centering
+			\caption{Diagnostic Test for Revenue.\textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\FileNameDiagnostic}
+			\end{figure}
+	}
+	
+    \foreach \time in \ArimaxNum {
+	    \edef\FileNamePlot{\OutputArimax{3}/\i/forecast-\time.png}%
+    	\IfFileExists{\FileNamePlot}{
+			\begin{figure}[H]
+			\centering
+			\caption{ARIMAX Model Class Results for \textbf{$\i$}}
+		    \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{\FileNamePlot}
+			\end{figure}
+    	}
+    }
+    \newpage
+}
+\fi
+

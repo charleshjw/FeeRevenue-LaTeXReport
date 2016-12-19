@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\BU{Clearing}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{CS, CSexClearance, BalanceNPosition,
+Total_Balance, Choice, Prop, Total_positions, Networking, Omni, Fundvest, IRA_Account, Clearance_Fees,
+Total_Other, TOT_CLEARNC_CUST_FEE, PORTFOLIO_SVCES_FEES, SPECIAL_SVCES_FEES,
+TECH_SUPPORT_FEES, Other}
+% \newcommand\SegmentsOneComponent{CSexClearance}
+
+\section{\BU-Segmentation 1}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+% \def\BU{Clearing}
+% \def\SegmentTwo{2}
+% \newcommand\SegmentsTwoComponent{CS, Albridge, PershingTrading, CSD,
+% PershingAdvisors, ManagedAccounts, CTS, FinancialSolutions, Other}
+% 
+% \section{\BU-Segmentation 2}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummaryByModel.tex}
+% \CleanUp
+
+% \def\BU{Clearing}
+% \def\SegmentThree{3}
+% \newcommand\SegmentsThreeComponent{CS, CSexClearance, BalanceNPosition,
+% Total_Balance, Choice, Prop, Total_positions, Networking, Omni, Fundvest, IRA_Account, Clearance_Fees,
+% Total_Other, TOT_CLEARNC_CUST_FEE, PORTFOLIO_SVCES_FEES, SPECIAL_SVCES_FEES,
+% TECH_SUPPORT_FEES, Other}
+% 
+% \section{\BU-Segmentation 3 - Quarterly}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummaryByModel.tex}
+% \CleanUp
+
+
+\end{document}

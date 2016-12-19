@@ -1,0 +1,106 @@
+\ifdefined\version \else \newcommand\version{Output-Q22016-CCAR11172016} \fi
+\ifdefined\Output \else \newcommand\Output{/Users/charleshjw/Workspace/Revenue-Results} \fi
+\usepackage{graphicx} %import png files
+% \usepackage{amstext}
+%\usepackage{csvsimple} %import csv file
+% \usepackage[landscape,margin=2cm]{geometry} %page set up
+\usepackage[margin=2cm]{geometry} %page set up
+\usepackage{float} %fix
+% graphs' positions
+\usepackage[bookmarks]{hyperref}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{csvsimple}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{xcolor}
+\definecolor{color_gold}{HTML}{AB8433}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\def\imagetop#1{\vtop{\null\hbox{#1}}} %align two graphs in the table
+\usepackage{tikz}%design for front page
+\newcommand\pagetitlecenter[1] {{\Large{\textbf{#1}}}}
+
+\usepackage{fancyhdr}
+\fancypagestyle{myheader} {
+  \fancyhf{}% Clear all headers/footers
+  \fancyheadoffset{0cm}  
+  \fancyhead[R]{BNY Mellon - \BU}% Header Centred
+  \fancyhead[L]{
+  	\begin{picture}(0,0)
+ 	\put(0,0){\includegraphics[width=3cm]{./Pictures/bnym_invested_4cp_pos_GOLD.png}}
+  	\end{picture}
+  	}% Header Centred
+  \fancyfoot[C]{-\thepage-}% Footer Centred
+  \renewcommand{\headrulewidth}{1pt}% 2pt header rule
+  \renewcommand{\headrule}{\hbox to\headwidth{%
+    \color{color_gold}\leaders\hrule height \headrulewidth\hfill}}
+  \renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+\pagestyle{myheader}
+\def\imagetop#1{\vtop{\null\hbox{#1}}} %align two graphs in the table
+\usepackage{afterpage}
+
+\newcommand\OutputRevenueStructure{\Output/Document/RevenueStructure}
+\newcommand\OutputComponent[1]{\Output/\version/\BU/Analysis-ComponentAnalysis-Segment-#1}
+\newcommand\OutputSegmentation[1]{\Output/\version/\BU/Analysis-Materiality-Segment-#1}
+\newcommand\OutputHistory[1]{\Output/\version/\BU/Analysis-History-Segment-#1}
+\newcommand\OutputCCFExternal[1]{\Output/\version/\BU/Analysis-CrossCorrelation-External-Segment-#1}
+\newcommand\OutputReg[1]{\Output/\version/\BU/Analysis-Regression-Segment-#1}
+\newcommand\OutputRegQuarter[1]{\Output/\version/\BU/Analysis-Regression-Quarter-Segment-#1}
+\newcommand\OutputDiffReg[1]{\Output/\version/\BU/Analysis-DiffRegression-Segment-#1}
+\newcommand\OutputRegSummary[1]{\Output/\version/\BU/Regression-Summary-Segment-#1}
+\newcommand\OutputMovingAverage[1]{\Output/\version/\BU/Analysis-MovingAverage-Segment-#1}
+\newcommand\OutputSeasonal[1]{\Output/\version/\BU/Analysis-SeaonalDecomposition-Segment-#1}
+\newcommand\OutputTSAnalysis[1]{\Output/\version/\BU/Analysis-TimeSeries-#1}
+
+\newcommand\SeasonTime{0,1,2,3}
+\newcommand\DiagnosticTest{0,1,2,3,4,5,6,7,8,9,10}
+\newcommand\OutSampleTest{3,6,9,12,18,24}
+\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+
+\newcommand\CleanUp{\let\BU\undefined
+\let\SegmentOne\undefined
+\let\SegmentTwo\undefined
+\let\SegmentThree\undefined
+\let\SegmentsOneComponent\undefined
+\let\SegmentsTwoComponent\undefined
+\let\SegmentsThreeComponent\undefined
+\let\SegmentsThreeComponent\ChampionSegment}
+
+
+% ------------------------------------------------------------------------------
+% Title Page Definitions (do not change this)
+% ------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\makeatletter							% Title
+\def\printtitle{%
+    {\centering \@title\par}}
+\makeatother
+
+\makeatletter							% Author
+\def\printauthor{%
+    {\centering \large \@author}}
+\makeatother
+
+% ------------------------------------------------------------------------------
+% Metadata (Change this)
+% ------------------------------------------------------------------------------
+\title{	\normalsize \textsc{Model Production Handbook}% Subtitle of the
+% document
+		 	\\[2.0cm]													% 2cm spacing
+			\HRule{0.5pt} \\										% Upper rule
+			\LARGE \textbf{\uppercase{Fee Revenue Model Production Package}\\
+			\large Data Version: \version}
+			% Title
+			\HRule{2pt} \\ [0.5cm]								% Lower rule + 0.5cm spacing
+			\normalsize \today									% Todays date
+		}
+
+\author{
+		Corporate Strategy and Planning Management\\
+		Bank of New York Mellon Corporation\\
+}

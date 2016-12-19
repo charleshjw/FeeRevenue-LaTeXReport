@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \def\BU{FX}
+% \def\SegmentOne{1}
+% \newcommand\SegmentsOneComponent{FX_MAQ, FX_BU, FX_Recon_Error, FeeBased,
+% SpreadBased, CM}
+% 
+% \section{\BU-Segmentation 1}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary.tex}
+% \CleanUp
+% 
+% \def\BU{FX}
+% \def\SegmentTwo{2}
+% \newcommand\SegmentsOneComponent{FX, FXGlobalServices, NorthAmericaTrading,
+% EMEATrading, APACTrading, Others}
+% 
+% \section{\BU-Segmentation 2}
+% 	\def\ModelSummaryNum{1,2,3,4,5,6,7,8,9,10}
+% 	\input{../Revenue/Segmentation.tex}
+% 	\input{./ModelSummary.tex}
+% \CleanUp
+\def\BU{FX}
+\def\SegmentThree{3}
+\newcommand\SegmentsThreeComponent{GMCM, FX, FX_Adjusted,
+PaymentADRCurrAdmin, FeeBased, DefinedSpread_Standard, DefinedSpread_Bespoke,
+WMBenchmark, InternalClient, OtherOptOuts, GatewayUnknown, EFP, Payments, SpreadBased, Fxsales, SessionRange, SessionRangeOutProgram, TradingRevenue, ADR,
+CurrencyAdmin, FX_Other, DesktoDesk, UncategorizedRevenue, CM}
+
+\section{\BU-Segmentation 3}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+\end{document}

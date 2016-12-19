@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\input{./Production-headlines.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\printtitle									% Print the title data as defined above
+  	\vfill
+\printauthor
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BU{WM}
+\def\SegmentOne{1}
+\newcommand\SegmentsOneComponent{PWM, IS_adjusted, IM_adjusted, AccountLevelFee,
+MPAM, HedgeFundRev, OtherIMFee, OtherRevenue,PWMexIM}
+
+\section{\BU - Segmentation 1}
+	\input{../Revenue/Segmentation.tex}
+	\input{./ModelSummaryByModel.tex}
+\CleanUp
+
+\end{document}
